@@ -1,2 +1,2 @@
 # NCPhO-Website
-Official Website for North Carolina Physics Olympiad
+Hello, welcome to the official website for North Carolina Physics Olympiad! NCPhO is an opporuntiy for experienced and unexperienced physics competitors to be introduced to Physics. This competion was created in North Carolina by students at the North Carolina School of Science and Mathematics (NCSSM) but can be taken anywhere. Please register to compete in this Physics Competition here!
