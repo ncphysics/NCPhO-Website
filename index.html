@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>North Carolina Physics Olympiad</title>
-    
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       /* --- RESET & VARIABLES --- */
@@ -27,8 +30,8 @@
         --glass-border: rgba(255, 255, 255, 0.1);
         --text: #f0f0f0;
         --text-dim: #94a3b8;
-        --font-head: 'Outfit', sans-serif;
-        --font-body: 'Inter', sans-serif;
+        --font-head: "Outfit", sans-serif;
+        --font-body: "Inter", sans-serif;
       }
 
       body {
@@ -98,7 +101,8 @@
         position: relative;
       }
 
-      .nav-links a:hover, .nav-links a.active-link {
+      .nav-links a:hover,
+      .nav-links a.active-link {
         color: var(--primary);
       }
 
@@ -113,7 +117,8 @@
         transition: width 0.3s ease;
       }
 
-      .nav-links a:hover::after, .nav-links a.active-link::after {
+      .nav-links a:hover::after,
+      .nav-links a.active-link::after {
         width: 100%;
       }
 
@@ -140,8 +145,14 @@
       }
 
       @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       /* --- HERO SECTION --- */
@@ -160,7 +171,12 @@
         font-size: 4.5rem;
         line-height: 1.1;
         font-weight: 800;
-        background: linear-gradient(135deg, #ffffff 0%, var(--primary) 50%, var(--secondary) 100%);
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          var(--primary) 50%,
+          var(--secondary) 100%
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: 1rem;
@@ -287,7 +303,8 @@
         margin: 2rem 0 0.5rem;
       }
 
-      .card p, .card li {
+      .card p,
+      .card li {
         color: var(--text-dim);
         margin-bottom: 1rem;
         font-size: 1.05rem;
@@ -345,10 +362,22 @@
       }
 
       /* Rank Colors */
-      .rank { font-weight: 800; font-family: var(--font-head); }
-      .rank-1 { color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-      .rank-2 { color: #e0e0e0; text-shadow: 0 0 10px rgba(224, 224, 224, 0.5); }
-      .rank-3 { color: #cd7f32; text-shadow: 0 0 10px rgba(205, 127, 50, 0.5); }
+      .rank {
+        font-weight: 800;
+        font-family: var(--font-head);
+      }
+      .rank-1 {
+        color: #ffd700;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      }
+      .rank-2 {
+        color: #e0e0e0;
+        text-shadow: 0 0 10px rgba(224, 224, 224, 0.5);
+      }
+      .rank-3 {
+        color: #cd7f32;
+        text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+      }
 
       /* --- GRIDS (Contributors & Archive) --- */
       .grid-layout {
@@ -412,8 +441,10 @@
       }
 
       @media (max-width: 768px) {
-        .mobile-toggle { display: flex; }
-        
+        .mobile-toggle {
+          display: flex;
+        }
+
         .nav-links {
           position: fixed;
           top: 0;
@@ -426,13 +457,19 @@
           align-items: center;
           transform: translateX(100%);
           transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+          box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
         }
 
-        .nav-links.active { transform: translateX(0); }
+        .nav-links.active {
+          transform: translateX(0);
+        }
 
-        .hero h1 { font-size: 3rem; }
-        .countdown { grid-template-columns: repeat(2, 1fr); }
+        .hero h1 {
+          font-size: 3rem;
+        }
+        .countdown {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
     </style>
   </head>
@@ -444,14 +481,30 @@
     <nav>
       <div class="nav-container">
         <div class="logo" onclick="showSection('home')">NCPhO</div>
-        
+
         <ul class="nav-links" id="navLinks">
-          <li><a href="#home" onclick="showSection('home')" class="active-link">Home</a></li>
+          <li>
+            <a href="#home" onclick="showSection('home')" class="active-link"
+              >Home</a
+            >
+          </li>
           <li><a href="#info" onclick="showSection('info')">Info</a></li>
-          <li><a href="#practice" onclick="showSection('practice')">Practice</a></li>
-          <li><a href="#leaderboard" onclick="showSection('leaderboard')">Leaderboard</a></li>
-          <li><a href="#contributors" onclick="showSection('contributors')">Team</a></li>
-          <li><a href="#archive" onclick="showSection('archive')">Archive</a></li>
+          <li>
+            <a href="#practice" onclick="showSection('practice')">Practice</a>
+          </li>
+          <li>
+            <a href="#leaderboard" onclick="showSection('leaderboard')"
+              >Leaderboard</a
+            >
+          </li>
+          <li>
+            <a href="#contributors" onclick="showSection('contributors')"
+              >Team</a
+            >
+          </li>
+          <li>
+            <a href="#archive" onclick="showSection('archive')">Archive</a>
+          </li>
         </ul>
 
         <div class="mobile-toggle" onclick="toggleMobileMenu()">
@@ -464,14 +517,25 @@
 
     <!-- Main Content -->
     <main>
-      
       <!-- HOME SECTION -->
       <section id="home" class="active">
         <div class="container hero">
           <div>
-            <span style="color: var(--primary); letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; font-weight: 700;">Welcome to</span>
+            <span
+              style="
+                color: var(--primary);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                font-weight: 700;
+              "
+              >Welcome to</span
+            >
             <h1>NC Physics Olympiad</h1>
-            <p>Monthly competitive physics problems designed to challenge your understanding and problem-solving intuition.</p>
+            <p>
+              NCPhO is a monthly physics competition designed to challenge your
+              problem-solving abilities and physics intuition.
+            </p>
           </div>
 
           <div class="countdown">
@@ -493,24 +557,49 @@
             </div>
           </div>
 
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              flex-wrap: wrap;
+              justify-content: center;
+            "
+          >
             <a href="#" class="btn" id="registerBtn">Register Now</a>
           </div>
 
           <div class="social-links">
             <a href="#" class="social-link" id="instagramLink" target="_blank">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              <span>Instagram</span>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              <span>Follow our Instagram</span>
             </a>
             <a href="#" class="social-link" id="discordLink" target="_blank">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-              <span>Discord</span>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                />
+              </svg>
+              <span>Join our Discord</span>
             </a>
           </div>
 
-          <div class="card" style="margin-top: 3rem; width: 100%; max-width: 800px; text-align: left;">
-            <h3 style="margin-top: 0">📅 Next Competition Window</h3>
-            <p id="currentCompetitionInfo" style="margin-bottom: 0">Loading...</p>
+          <div
+            class="card"
+            style="
+              margin-top: 3rem;
+              width: 100%;
+              max-width: 800px;
+              text-align: left;
+            "
+          >
+            <h3 style="margin-top: 0">Upcoming Competition Window</h3>
+            <p id="currentCompetitionInfo" style="margin-bottom: 0">
+              Loading...
+            </p>
           </div>
         </div>
       </section>
@@ -520,20 +609,39 @@
         <div class="container">
           <div class="card">
             <h2>About the Competition</h2>
-            <p>The North Carolina Physics Olympiad (NCPhO) is designed to cultivate a community of physics enthusiasts. We focus on creative problem-solving rather than rote memorization.</p>
+            <p>
+              The North Carolina Physics Olympiad (NCPhO) is designed to
+              cultivate a global community of physics enthusiasts from different
+              backgrounds. Our problems require creative problem-solving rather
+              than rote memorization and algorithmic approaches. All types of
+              physics may be tested.
+            </p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+              "
+            >
               <div>
                 <h3>Format</h3>
-                <p>25 Multiple Choice Questions<br>Online & Timed</p>
+                <p>25 Multiple Choice Questions<br />Online<br />75 Minutes</p>
               </div>
               <div>
                 <h3>Scoring</h3>
-                <p>Q1-20: <strong>4 pts</strong><br>Q21-25: <strong>6 pts</strong><br>Blank: <strong>1 pt</strong></p>
+                <p>
+                  Q1-20: <strong>4 pts</strong><br />Q21-25:
+                  <strong>6 pts</strong><br />Blank: <strong>1 pt</strong
+                  ><br />Incorrect: <strong>0 pts</strong>
+                </p>
               </div>
               <div>
                 <h3>Rules</h3>
-                <p>Individual Entry<br>Calculators Allowed<br>No Internet/AI</p>
+                <p>
+                  Individual Entry<br />Calculators Allowed<br />No Internet/AI
+                </p>
               </div>
             </div>
           </div>
@@ -544,17 +652,20 @@
       <section id="practice">
         <div class="container">
           <div class="card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+              "
+            >
               <h2>Practice Questions</h2>
               <a href="#" id="dl-pdf" class="social-link">Open in New Tab</a>
             </div>
-            
+
             <div class="pdf-wrapper">
-              <iframe
-                src=""
-                id="pdfFrame"
-                allow="autoplay"
-              ></iframe>
+              <iframe src="" id="pdfFrame" allow="autoplay"></iframe>
             </div>
           </div>
         </div>
@@ -609,7 +720,6 @@
           </div>
         </div>
       </section>
-
     </main>
 
     <script>
@@ -617,47 +727,96 @@
       const CONFIG = {
         competitionStartDate: "2026-01-10",
         competitionEndDate: "2026-01-17",
-        registrationFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeaGqVKQ4kgsVsWJlATgjXjFPpyAzNUzwQGr7rt6XQLQNNKOg/viewform?usp=header",
-        instagramUrl: "https://www.instagram.com/ncssmphysicsclub?igsh=OTIzNHgzY3lheWlt&utm_source=qr",
+        registrationFormUrl:
+          "https://docs.google.com/forms/d/e/1FAIpQLSeaGqVKQ4kgsVsWJlATgjXjFPpyAzNUzwQGr7rt6XQLQNNKOg/viewform?usp=header",
+        instagramUrl:
+          "https://www.instagram.com/ncssmphysicsclub?igsh=OTIzNHgzY3lheWlt&utm_source=qr",
         discordUrl: "https://discord.com/invite/eVqrfEhw6y",
-        practicePdfUrl: "https://drive.google.com/file/d/11Z0xe88ykuKHbdNE2wgaEt_wjFYMZPGm/preview",
-        
+        practicePdfUrl:
+          "https://drive.google.com/file/d/11Z0xe88ykuKHbdNE2wgaEt_wjFYMZPGm/preview",
+
         leaderboardData: [
-          { rank: 1, name: "Dillan Garner", school: "NCSSM", state: "NC", score: 110 },
+          {
+            rank: 1,
+            name: "Dillan Garner",
+            school: "NCSSM",
+            state: "NC",
+            score: 110,
+          },
         ],
 
         contributors: [
           { name: "Nolan Sheldon", role: "Test Writer", affiliation: "NCSSM" },
           { name: "Aaron Zhu", role: "Test Writer", affiliation: "NCSSM" },
           { name: "Kevin Yang", role: "Test Writer", affiliation: "NCSSM" },
-          { name: "Dillan Garner", role: "Co-President, Logistics Lead", affiliation: "NCSSM" },
-          { name: "Nikhil Mehta", role: "Co-President, Logistics Lead", affiliation: "NCSSM" },
-          { name: "David Osinuga", role: "Vice President, Logistics Lead", affiliation: "NCSSM" },
-          { name: "Pranava Kumar", role: "Co-President, Marketing/Competition Lead ", affiliation: "NCSSM" },
-          { name: "Alan Cai", role: "Marketing Director", affiliation: "NCSSM" },
-          { name: "Jack Chen", role: "Marketing Director", affiliation: "NCSSM" },
+          {
+            name: "Dillan Garner",
+            role: "Founder & Logistics Director",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "Nikhil Mehta",
+            role: "Founder & Logistics Director",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "David Osinuga",
+            role: "Co-Founder & Logistics Director",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "Pranava Kumar",
+            role: "Marketing Director ",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "Alan Cai",
+            role: "Marketing Director",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "Jack Chen",
+            role: "Marketing Director",
+            affiliation: "NCSSM",
+          },
           { name: "Baya Belgaied", role: "Outreach", affiliation: "NCSSM" },
-          { name: "Scarlett Kerr", role: "Outreach", affiliation: "Byron Nelson High" },
+          {
+            name: "Scarlett Kerr",
+            role: "Outreach",
+            affiliation: "Byron Nelson High",
+          },
         ],
 
         pastCompetitions: [
-          { month: "December 2024", date: "2025-12-15", participants: 15, winner: "Dillan Garner", topScore: 110 },
-        ]
+          {
+            month: "December 2025",
+            date: "2025-12-15",
+            participants: 1,
+            winner: "Dillan Garner",
+            topScore: 110,
+          },
+        ],
       };
 
       /* --- UI LOGIC --- */
 
       // Navigation
       function showSection(sectionId) {
-        document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+        document
+          .querySelectorAll("section")
+          .forEach((s) => s.classList.remove("active"));
         document.getElementById(sectionId).classList.add("active");
-        
+
         // Update Active Link State
-        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-link'));
-        document.querySelector(`.nav-links a[href="#${sectionId}"]`).classList.add('active-link');
+        document
+          .querySelectorAll(".nav-links a")
+          .forEach((a) => a.classList.remove("active-link"));
+        document
+          .querySelector(`.nav-links a[href="#${sectionId}"]`)
+          .classList.add("active-link");
 
         document.getElementById("navLinks").classList.remove("active");
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       function toggleMobileMenu() {
@@ -668,26 +827,40 @@
       document.getElementById("registerBtn").href = CONFIG.registrationFormUrl;
       document.getElementById("instagramLink").href = CONFIG.instagramUrl;
       document.getElementById("discordLink").href = CONFIG.discordUrl;
-      
+
       // PDF
       document.getElementById("pdfFrame").src = CONFIG.practicePdfUrl;
-      document.getElementById("dl-pdf").href = CONFIG.practicePdfUrl.replace('/preview', '/view');
+      document.getElementById("dl-pdf").href = CONFIG.practicePdfUrl.replace(
+        "/preview",
+        "/view"
+      );
 
       // Dates
       const start = new Date(CONFIG.competitionStartDate);
       const end = new Date(CONFIG.competitionEndDate);
-      const options = { month: 'long', day: 'numeric' };
-      document.getElementById("currentCompetitionInfo").innerHTML = 
-        `<strong>${start.toLocaleDateString('en-US', options)} - ${end.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric'})}</strong><br>
+      const options = { month: "long", day: "numeric" };
+      document.getElementById(
+        "currentCompetitionInfo"
+      ).innerHTML = `<strong>${start.toLocaleDateString(
+        "en-US",
+        options
+      )} - ${end.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      })}</strong><br>
         <span style="color:var(--text-dim); font-size:0.9rem">Window opens at 12:00 AM EST and closes at 11:59 PM EST.</span>`;
 
       // Leaderboard
       const lbBody = document.getElementById("leaderboardBody");
-      CONFIG.leaderboardData.forEach(entry => {
+      CONFIG.leaderboardData.forEach((entry) => {
         let rankHtml = `#${entry.rank}`;
-        if(entry.rank === 1) rankHtml = `<span class="rank rank-1">🏆 1st</span>`;
-        if(entry.rank === 2) rankHtml = `<span class="rank rank-2">🥈 2nd</span>`;
-        if(entry.rank === 3) rankHtml = `<span class="rank rank-3">🥉 3rd</span>`;
+        if (entry.rank === 1)
+          rankHtml = `<span class="rank rank-1">🏆 1st</span>`;
+        if (entry.rank === 2)
+          rankHtml = `<span class="rank rank-2">🥈 2nd</span>`;
+        if (entry.rank === 3)
+          rankHtml = `<span class="rank rank-3">🥉 3rd</span>`;
 
         const row = document.createElement("tr");
         row.className = "row-content";
@@ -697,7 +870,7 @@
 
       // Contributors
       const contribGrid = document.getElementById("contributorsGrid");
-      CONFIG.contributors.forEach(c => {
+      CONFIG.contributors.forEach((c) => {
         const div = document.createElement("div");
         div.className = "mini-card";
         div.innerHTML = `<h3>${c.name}</h3><p style="color:var(--primary); font-weight:600; margin-bottom:0.5rem">${c.role}</p><p style="font-size:0.9rem; color:var(--text-dim)">${c.affiliation}</p>`;
@@ -706,7 +879,7 @@
 
       // Archive
       const archiveGrid = document.getElementById("archiveGrid");
-      CONFIG.pastCompetitions.forEach(c => {
+      CONFIG.pastCompetitions.forEach((c) => {
         const div = document.createElement("div");
         div.className = "mini-card";
         div.innerHTML = `<h3>${c.month}</h3>
@@ -718,7 +891,9 @@
 
       // Countdown
       function updateCountdown() {
-        const target = new Date(CONFIG.competitionStartDate + " 00:00:00").getTime();
+        const target = new Date(
+          CONFIG.competitionStartDate + " 00:00:00"
+        ).getTime();
         const now = new Date().getTime();
         const diff = target - now;
 
@@ -729,10 +904,16 @@
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerText = String(d).padStart(2, '0');
-        document.getElementById("hours").innerText = String(h).padStart(2, '0');
-        document.getElementById("minutes").innerText = String(m).padStart(2, '0');
-        document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+        document.getElementById("days").innerText = String(d).padStart(2, "0");
+        document.getElementById("hours").innerText = String(h).padStart(2, "0");
+        document.getElementById("minutes").innerText = String(m).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("seconds").innerText = String(s).padStart(
+          2,
+          "0"
+        );
       }
       setInterval(updateCountdown, 1000);
       updateCountdown();
@@ -745,7 +926,7 @@
 
       // Mouse tracking
       let mouse = { x: null, y: null, radius: 150 };
-      window.addEventListener('mousemove', (e) => {
+      window.addEventListener("mousemove", (e) => {
         mouse.x = e.x;
         mouse.y = e.y;
       });
@@ -767,14 +948,14 @@
           this.size = Math.random() * 2;
           this.baseX = this.x;
           this.baseY = this.y;
-          this.density = (Math.random() * 30) + 1;
+          this.density = Math.random() * 30 + 1;
         }
-        
+
         update() {
           // Mouse interaction
           let dx = mouse.x - this.x;
           let dy = mouse.y - this.y;
-          let distance = Math.sqrt(dx*dx + dy*dy);
+          let distance = Math.sqrt(dx * dx + dy * dy);
           let forceDirectionX = dx / distance;
           let forceDirectionY = dy / distance;
           let maxDistance = mouse.radius;
@@ -788,11 +969,11 @@
           } else {
             if (this.x !== this.baseX) {
               let dx = this.x - this.baseX;
-              this.x -= dx/10;
+              this.x -= dx / 10;
             }
             if (this.y !== this.baseY) {
               let dy = this.y - this.baseY;
-              this.y -= dy/10;
+              this.y -= dy / 10;
             }
           }
 
@@ -827,15 +1008,15 @@
         for (let i = 0; i < particles.length; i++) {
           particles[i].update();
           particles[i].draw();
-          
+
           // Connect particles
           for (let j = i; j < particles.length; j++) {
             let dx = particles[i].x - particles[j].x;
             let dy = particles[i].y - particles[j].y;
-            let distance = Math.sqrt(dx*dx + dy*dy);
+            let distance = Math.sqrt(dx * dx + dy * dy);
             if (distance < 100) {
               ctx.beginPath();
-              ctx.strokeStyle = `rgba(0, 242, 234, ${1 - distance/100})`;
+              ctx.strokeStyle = `rgba(0, 242, 234, ${1 - distance / 100})`;
               ctx.lineWidth = 0.5;
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
@@ -846,10 +1027,9 @@
         requestAnimationFrame(animate);
       }
 
-      window.addEventListener('resize', resize);
+      window.addEventListener("resize", resize);
       resize();
       animate();
-
     </script>
   </body>
 </html>
