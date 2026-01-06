@@ -808,8 +808,9 @@
       );
 
       // Dates
-      const start = new Date(CONFIG.competitionStartDate);
-      const end = new Date(CONFIG.competitionEndDate);
+      // Adjusted parsing to ensure Local Time (prevents UTC timezone shift to Jan 9)
+      const start = new Date(CONFIG.competitionStartDate + " 00:00:00");
+      const end = new Date(CONFIG.competitionEndDate + " 00:00:00");
       const options = { month: "long", day: "numeric" };
       document.getElementById(
         "currentCompetitionInfo"
