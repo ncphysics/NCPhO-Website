@@ -492,6 +492,10 @@
           <li>
             <a href="#practice" onclick="showSection('practice')">Practice</a>
           </li>
+          <!-- NEW CONSTANTS TAB -->
+          <li>
+            <a href="#constants" onclick="showSection('constants')">Constants</a>
+          </li>
           <li>
             <a href="#leaderboard" onclick="showSection('leaderboard')"
               >Leaderboard</a
@@ -661,11 +665,34 @@
               "
             >
               <h2>Practice Questions</h2>
-              <a href="#" id="dl-pdf" class="social-link">Open in New Tab</a>
+              <a href="#" id="dl-pdf" class="social-link" target="_blank">Open in New Tab</a>
             </div>
 
             <div class="pdf-wrapper">
               <iframe src="" id="pdfFrame" allow="autoplay"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONSTANTS SECTION (NEW) -->
+      <section id="constants">
+        <div class="container">
+          <div class="card">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+              "
+            >
+              <h2>List of Constants</h2>
+              <a href="#" id="dl-constants" class="social-link" target="_blank">Open in New Tab</a>
+            </div>
+
+            <div class="pdf-wrapper">
+              <iframe src="" id="constantsFrame" allow="autoplay"></iframe>
             </div>
           </div>
         </div>
@@ -734,6 +761,8 @@
         discordUrl: "https://discord.com/invite/eVqrfEhw6y",
         practicePdfUrl:
           "https://drive.google.com/file/d/11Z0xe88ykuKHbdNE2wgaEt_wjFYMZPGm/preview",
+        // NEW CONFIG ENTRY
+        constantsPdfUrl: "ncphoConstants.pdf",
 
         leaderboardData: [
           {
@@ -801,12 +830,16 @@
       document.getElementById("instagramLink").href = CONFIG.instagramUrl;
       document.getElementById("discordLink").href = CONFIG.discordUrl;
 
-      // PDF
+      // PDF (Practice)
       document.getElementById("pdfFrame").src = CONFIG.practicePdfUrl;
       document.getElementById("dl-pdf").href = CONFIG.practicePdfUrl.replace(
         "/preview",
         "/view"
       );
+
+      // PDF (Constants - NEW)
+      document.getElementById("constantsFrame").src = CONFIG.constantsPdfUrl;
+      document.getElementById("dl-constants").href = CONFIG.constantsPdfUrl;
 
       // Dates
       // Adjusted parsing to ensure Local Time (prevents UTC timezone shift to Jan 9)
