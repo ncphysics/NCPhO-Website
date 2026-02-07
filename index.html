@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -337,7 +337,9 @@
 
       .leaderboard-table tr.row-content {
         background: rgba(255, 255, 255, 0.03);
-        transition: transform 0.2s, background 0.2s;
+        transition:
+          transform 0.2s,
+          background 0.2s;
       }
 
       .leaderboard-table tr.row-content:hover {
@@ -494,7 +496,9 @@
           </li>
           <!-- NEW CONSTANTS TAB -->
           <li>
-            <a href="#constants" onclick="showSection('constants')">Constants</a>
+            <a href="#constants" onclick="showSection('constants')"
+              >Constants</a
+            >
           </li>
           <li>
             <a href="#leaderboard" onclick="showSection('leaderboard')"
@@ -538,7 +542,8 @@
             <h1>NC Physics Olympiad</h1>
             <p>
               NCPhO is a monthly physics competition designed to challenge your
-              problem-solving abilities and physics intuition. Open for anyone to compete!
+              problem-solving abilities and physics intuition. Open for anyone
+              to compete!
             </p>
           </div>
 
@@ -620,7 +625,7 @@
               than rote memorization and algorithmic approaches. All types of
               physics may be tested.
             </p>
-                        <hr style="border-color: var(--glass-border); margin: 2rem 0" />
+            <hr style="border-color: var(--glass-border); margin: 2rem 0" />
             <p>
               Questions or concerns? Email
               <a href="mailto:garner27d@ncssm.edu">garner27d@ncssm.edu</a>.
@@ -670,7 +675,9 @@
               "
             >
               <h2>Practice Questions</h2>
-              <a href="#" id="dl-pdf" class="social-link" target="_blank">Open in New Tab</a>
+              <a href="#" id="dl-pdf" class="social-link" target="_blank"
+                >Open in New Tab</a
+              >
             </div>
 
             <div class="pdf-wrapper">
@@ -693,7 +700,9 @@
               "
             >
               <h2>List of Constants</h2>
-              <a href="#" id="dl-constants" class="social-link" target="_blank">Open in New Tab</a>
+              <a href="#" id="dl-constants" class="social-link" target="_blank"
+                >Open in New Tab</a
+              >
             </div>
 
             <div class="pdf-wrapper">
@@ -715,7 +724,6 @@
                 <tr>
                   <th>Rank</th>
                   <th>Name</th>
-                  <th>School</th>
                   <th>State</th>
                   <th>Score</th>
                 </tr>
@@ -772,10 +780,21 @@
         leaderboardData: [
           {
             rank: 1,
-            name: "Dillan Garner",
-            school: "NCSSM",
+            name: "Akshar Vusthela",
             state: "NC",
-            score: 110,
+            score: 92,
+          },
+          {
+            rank: 2,
+            name: "Lawrence Qiao",
+            state: "NC",
+            score: 88,
+          },
+          {
+            rank: 3,
+            name: "Tiger Zhao",
+            state: "NC",
+            score: 76,
           },
         ],
 
@@ -784,23 +803,51 @@
           { name: "Aaron Zhu", role: "Test Writer", affiliation: "NCSSM" },
           { name: "Kevin Yang", role: "Test Writer", affiliation: "NCSSM" },
           { name: "Colin Xu", role: "Test Writer", affiliation: "NCSSM" },
-          { name: "Dillan Garner", role: "Founder & Executive Director", affiliation: "NCSSM" },
-          { name: "Nikhil Mehta", role: "Founder & Managing Director", affiliation: "NCSSM" },
-          { name: "Pranava Kumar", role: "Marketing and Technology Director", affiliation: "NCSSM" },
-          { name: "David Osinuga", role: "Logistics Lead", affiliation: "NCSSM" },
-          { name: "Alan Cai", role: "Marketing Director", affiliation: "NCSSM" },
-          { name: "Jack Chen", role: "Marketing Director", affiliation: "NCSSM" },
+          {
+            name: "Dillan Garner",
+            role: "Founder & Executive Director",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "Nikhil Mehta",
+            role: "Founder & Managing Director",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "Pranava Kumar",
+            role: "Marketing and Technology Director",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "David Osinuga",
+            role: "Logistics Lead",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "Alan Cai",
+            role: "Marketing Director",
+            affiliation: "NCSSM",
+          },
+          {
+            name: "Jack Chen",
+            role: "Marketing Director",
+            affiliation: "NCSSM",
+          },
           { name: "Baya Belgaied", role: "Outreach", affiliation: "NCSSM" },
-          { name: "Scarlett Kerr", role: "Outreach", affiliation: "Byron Nelson High" },
+          {
+            name: "Scarlett Kerr",
+            role: "Outreach",
+            affiliation: "Byron Nelson High",
+          },
         ],
 
         pastCompetitions: [
           {
-            month: "December 2025",
+            month: "January 2026",
             date: "2025-12-15",
-            participants: 1,
-            winner: "Dillan Garner",
-            topScore: 110,
+            participants: 31,
+            winner: "Akshar Vusthela",
+            topScore: 92,
           },
         ],
       };
@@ -839,7 +886,7 @@
       document.getElementById("pdfFrame").src = CONFIG.practicePdfUrl;
       document.getElementById("dl-pdf").href = CONFIG.practicePdfUrl.replace(
         "/preview",
-        "/view"
+        "/view",
       );
 
       // PDF (Constants - NEW)
@@ -851,16 +898,15 @@
       const start = new Date(CONFIG.competitionStartDate + " 00:00:00");
       const end = new Date(CONFIG.competitionEndDate + " 00:00:00");
       const options = { month: "long", day: "numeric" };
-      document.getElementById(
-        "currentCompetitionInfo"
-      ).innerHTML = `<strong>${start.toLocaleDateString(
-        "en-US",
-        options
-      )} - ${end.toLocaleDateString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      })}</strong><br>
+      document.getElementById("currentCompetitionInfo").innerHTML =
+        `<strong>${start.toLocaleDateString(
+          "en-US",
+          options,
+        )} - ${end.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })}</strong><br>
         <span style="color:var(--text-dim); font-size:0.9rem">Window opens at 12:00 AM EST and closes at 11:59 PM EST.</span>`;
 
       // Leaderboard
@@ -876,7 +922,7 @@
 
         const row = document.createElement("tr");
         row.className = "row-content";
-        row.innerHTML = `<td>${rankHtml}</td><td><strong>${entry.name}</strong></td><td>${entry.school}</td><td>${entry.state}</td><td>${entry.score}</td>`;
+        row.innerHTML = `<td>${rankHtml}</td><td><strong>${entry.name}</strong></td><td>${entry.state}</td><td>${entry.score}</td>`;
         lbBody.appendChild(row);
       });
 
@@ -894,17 +940,27 @@
       CONFIG.pastCompetitions.forEach((c) => {
         const div = document.createElement("div");
         div.className = "mini-card";
-        div.innerHTML = `<h3>${c.month}</h3>
-          <p>Participants: ${c.participants}</p>
-          <p>Winner: <span style="color:var(--primary)">${c.winner}</span></p>
-          <p>High Score: ${c.topScore}</p>`;
+        div.innerHTML = `
+  <h3>${c.month}</h3>
+  <p>Participants: ${c.participants}</p>
+  <p>Winner: <span style="color:var(--primary)">${c.winner}</span></p>
+  <p>High Score: ${c.topScore}</p>
+  <p>
+    Test:
+    <a href="https://tinyurl.com/u82hxzvh"
+       target="_blank">
+      https://tinyurl.com/u82hxzvh
+    </a>
+  </p>
+`;
+
         archiveGrid.appendChild(div);
       });
 
       // Countdown
       function updateCountdown() {
         const target = new Date(
-          CONFIG.competitionStartDate + " 00:00:00"
+          CONFIG.competitionStartDate + " 00:00:00",
         ).getTime();
         const now = new Date().getTime();
         const diff = target - now;
@@ -920,11 +976,11 @@
         document.getElementById("hours").innerText = String(h).padStart(2, "0");
         document.getElementById("minutes").innerText = String(m).padStart(
           2,
-          "0"
+          "0",
         );
         document.getElementById("seconds").innerText = String(s).padStart(
           2,
-          "0"
+          "0",
         );
       }
       setInterval(updateCountdown, 1000);
