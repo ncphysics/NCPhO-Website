@@ -319,69 +319,6 @@
         margin-bottom: 0.5rem;
       }
 
-      /* --- LEADERBOARD --- */
-      .leaderboard-table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0 10px;
-        margin-top: 1rem;
-      }
-
-      .leaderboard-table th {
-        text-align: left;
-        color: var(--text-dim);
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        padding: 0 1.5rem 0.5rem;
-        letter-spacing: 1px;
-      }
-
-      .leaderboard-table tr.row-content {
-        background: rgba(255, 255, 255, 0.03);
-        transition:
-          transform 0.2s,
-          background 0.2s;
-      }
-
-      .leaderboard-table tr.row-content:hover {
-        background: rgba(255, 255, 255, 0.06);
-        transform: scale(1.01);
-      }
-
-      .leaderboard-table td {
-        padding: 1.2rem 1.5rem;
-        border: 1px solid transparent;
-      }
-
-      .leaderboard-table td:first-child {
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-      }
-      .leaderboard-table td:last-child {
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        font-weight: 700;
-        color: var(--primary);
-      }
-
-      /* Rank Colors */
-      .rank {
-        font-weight: 800;
-        font-family: var(--font-head);
-      }
-      .rank-1 {
-        color: #ffd700;
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-      }
-      .rank-2 {
-        color: #e0e0e0;
-        text-shadow: 0 0 10px rgba(224, 224, 224, 0.5);
-      }
-      .rank-3 {
-        color: #cd7f32;
-        text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
-      }
-
       /* --- GRIDS (Contributors & Archive) --- */
       .grid-layout {
         display: grid;
@@ -502,11 +439,6 @@
             >
           </li>
           <li>
-            <a href="#leaderboard" onclick="showSection('leaderboard')"
-              >Leaderboard</a
-            >
-          </li>
-          <li>
             <a href="#contributors" onclick="showSection('contributors')"
               >Team</a
             >
@@ -542,9 +474,9 @@
             >
             <h1>NC Physics Olympiad</h1>
             <p>
-              NCPhO is a monthly physics competition designed to challenge your
-              problem-solving abilities and physics intuition. Open for anyone
-              to compete!
+              NCPhO is a recurring physics competition designed to challenge
+              your problem-solving abilities and physics intuition. Open for
+              anyone to compete!
             </p>
           </div>
 
@@ -717,30 +649,6 @@
         </div>
       </section>
 
-      <!-- LEADERBOARD SECTION -->
-      <section id="leaderboard">
-        <div class="container">
-          <div class="card">
-            <h2>Leaderboard</h2>
-            <p>Hall of Fame based on cumulative scores.</p>
-
-            <table class="leaderboard-table">
-              <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Name</th>
-                  <th>State</th>
-                  <th>Score</th>
-                </tr>
-              </thead>
-              <tbody id="leaderboardBody">
-                <!-- JS Populated -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       <!-- CONTRIBUTORS SECTION -->
       <section id="contributors">
         <div class="container">
@@ -770,8 +678,8 @@
     <script>
       /* --- CONFIGURATION --- */
       const CONFIG = {
-        competitionStartDate: "2026-05-1",
-        competitionEndDate: "2026-05-31",
+        competitionStartDate: "2026-08-25",
+        competitionEndDate: "2026-08-31",
         registrationFormUrl:
           "https://docs.google.com/forms/d/e/1FAIpQLSeaGqVKQ4kgsVsWJlATgjXjFPpyAzNUzwQGr7rt6XQLQNNKOg/viewform?usp=header",
         instagramUrl:
@@ -781,27 +689,6 @@
           "https://drive.google.com/file/d/11Z0xe88ykuKHbdNE2wgaEt_wjFYMZPGm/preview",
         // NEW CONFIG ENTRY
         constantsPdfUrl: "ncphoConstants.pdf",
-
-        leaderboardData: [
-          {
-            rank: 1,
-            name: "Akshar Vusthela",
-            state: "NC",
-            score: 92,
-          },
-          {
-            rank: 2,
-            name: "Lawrence Qiao",
-            state: "NC",
-            score: 88,
-          },
-          {
-            rank: 3,
-            name: "Tiger Zhao",
-            state: "NC",
-            score: 76,
-          },
-        ],
 
         contributors: [
           { name: "Nolan Sheldon", role: "Test Writer", affiliation: "NCSSM" },
@@ -853,6 +740,15 @@
             participants: 31,
             winner: "Akshar Vusthela",
             topScore: 92,
+            testUrl: "https://tinyurl.com/u82hxzvh",
+          },
+          {
+            month: "May 2026",
+            date: "2026-05-01",
+            participants: 53,
+            winner: "Lawrence Qiao",
+            topScore: 79,
+            testUrl: "http://tiny.cc/8jx4101",
           },
         ],
       };
@@ -913,23 +809,6 @@
         })}</strong><br>
         <span style="color:var(--text-dim); font-size:0.9rem">Window opens at 12:00 AM EST and closes at 11:59 PM EST.</span>`;
 
-      // Leaderboard
-      const lbBody = document.getElementById("leaderboardBody");
-      CONFIG.leaderboardData.forEach((entry) => {
-        let rankHtml = `#${entry.rank}`;
-        if (entry.rank === 1)
-          rankHtml = `<span class="rank rank-1">🏆 1st</span>`;
-        if (entry.rank === 2)
-          rankHtml = `<span class="rank rank-2">🥈 2nd</span>`;
-        if (entry.rank === 3)
-          rankHtml = `<span class="rank rank-3">🥉 3rd</span>`;
-
-        const row = document.createElement("tr");
-        row.className = "row-content";
-        row.innerHTML = `<td>${rankHtml}</td><td><strong>${entry.name}</strong></td><td>${entry.state}</td><td>${entry.score}</td>`;
-        lbBody.appendChild(row);
-      });
-
       // Contributors
       const contribGrid = document.getElementById("contributorsGrid");
       CONFIG.contributors.forEach((c) => {
@@ -951,10 +830,7 @@
   <p>High Score: ${c.topScore}</p>
   <p>
     Test:
-    <a href="https://tinyurl.com/u82hxzvh"
-       target="_blank">
-      https://tinyurl.com/u82hxzvh
-    </a>
+    <a href="${c.testUrl}" target="_blank">${c.testUrl}</a>
   </p>
 `;
 
