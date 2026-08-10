@@ -222,22 +222,6 @@ section.active {
   box-shadow: 0 12px 40px rgba(255, 0, 85, 0.15);
 }
 
-/* Non-clickable pillar: no pointer, no hover affordance. */
-.pillar.static {
-  cursor: default;
-}
-
-.pillar.static:hover {
-  transform: none;
-  background: rgba(255, 255, 255, 0.02);
-  border-color: var(--glass-border);
-  box-shadow: none;
-}
-
-.pillar.static p {
-  margin-bottom: 0;
-}
-
 .pillar h3 {
   font-family: var(--font-head);
   color: #fff;

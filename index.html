@@ -42,11 +42,9 @@
               >Home</a
             >
           </li>
-          <!-- Outreach nav tab hidden until camp photos are taken; restore this <li> then.
           <li>
             <a href="#outreach" onclick="showSection('outreach')">Outreach</a>
           </li>
-          -->
           <li><a href="#info" onclick="showSection('info')">Competition</a></li>
           <li>
             <a href="#practice" onclick="showSection('practice')">Practice</a>
@@ -112,13 +110,19 @@
               </p>
               <span class="enter">See dates &amp; register →</span>
             </div>
-            <!-- Informational only — no link until the Outreach page goes back up. -->
-            <div class="pillar out static">
+            <div
+              class="pillar out"
+              role="button"
+              tabindex="0"
+              onclick="showSection('outreach')"
+              onkeydown="onActivateKey(event, () => showSection('outreach'))"
+            >
               <h3>Outreach</h3>
               <p>
                 Physics is more fun in person, so our organization hosts physics
                 camps at rec centers in Charlotte and Wilmington.
               </p>
+              <span class="enter">See our outreach →</span>
             </div>
           </div>
 

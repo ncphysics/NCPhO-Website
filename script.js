@@ -11,30 +11,15 @@ const CONFIG = {
   constantsPdfUrl: "ncphoConstants.pdf",
 
   // OUTREACH IMPACT STATS
-  outreachStats: [
-    { num: "12", cap: "Events" },
-    { num: "400+", cap: "Students reached" },
-    { num: "20", cap: "Volunteers" },
-  ],
 
   // OUTREACH EVENTS — drop photos into the /outreach folder and
   // point "image" at them. Cards work fine before photos are added.
   outreachEvents: [
     {
-      title: "NCSSM Physics Night",
+      title: "Summer Physics Camp",
       description:
-        "Hands-on demos and live experiments for visiting middle schoolers.",
-      image: "outreach/physics-night.jpg",
-    },
-    {
-      title: "Free Tutoring Drive",
-      description: "Weekly mechanics and E&M sessions, open to any student.",
-      image: "outreach/tutoring.jpg",
-    },
-    {
-      title: "Rocketry Workshop",
-      description: "A build-and-launch day teaching projectile motion in action.",
-      image: "outreach/rocketry.jpg",
+        "Dillan Garner of the North Carolina Physics Orginization hosted a summer physics camp at a Mecklenburg County recreational center.",
+      image: "outreach/physics-camp-charlotte.jpg",
     },
   ],
 
@@ -180,13 +165,7 @@ updateCountdown();
 /* --- DYNAMIC CONTENT --- */
 
 // Outreach stats
-const impactRow = document.getElementById("impactRow");
-CONFIG.outreachStats.forEach((s) => {
-  const div = document.createElement("div");
-  div.className = "impact-stat";
-  div.innerHTML = `<div class="num">${s.num}</div><div class="cap">${s.cap}</div>`;
-  impactRow.appendChild(div);
-});
+
 
 // Outreach events (gallery)
 const outreachGrid = document.getElementById("outreachGrid");
