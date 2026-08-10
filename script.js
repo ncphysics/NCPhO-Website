@@ -18,7 +18,7 @@ const CONFIG = {
     {
       title: "Summer Physics Camp",
       description:
-        "Dillan Garner of the North Carolina Physics Orginization hosted a summer physics camp at a Mecklenburg County recreational center.",
+        "Dillan Garner of the North Carolina Physics Organization hosted a summer physics camp at a Mecklenburg County recreation center.",
       image: "outreach/physics-camp-charlotte.jpg",
     },
   ],
