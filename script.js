@@ -24,34 +24,17 @@ const CONFIG = {
   ],
 
   contributors: [
+    { name: "Dillan Garner", role: "Founder & Executive Director", affiliation: "NCSSM"},
+    {name: "Nikhil Mehta", role: "Founder & Logistics Director", affiliation: "NCSSM"},
     { name: "Nolan Sheldon", role: "Test Writer", affiliation: "NCSSM" },
     { name: "Aaron Zhu", role: "Test Writer", affiliation: "NCSSM" },
     { name: "Kevin Yang", role: "Test Writer", affiliation: "NCSSM" },
     { name: "Colin Xu", role: "Test Writer", affiliation: "NCSSM" },
-    {
-      name: "Dillan Garner",
-      role: "Founder & Executive Director",
-      affiliation: "NCSSM",
-    },
-    {
-      name: "Nikhil Mehta",
-      role: "Founder & Managing Director",
-      affiliation: "NCSSM",
-    },
-    {
-      name: "Pranava Kumar",
-      role: "Marketing and Technology Director",
-      affiliation: "NCSSM",
-    },
-    { name: "David Osinuga", role: "Logistics Lead", affiliation: "NCSSM" },
-    { name: "Alan Cai", role: "Marketing Director", affiliation: "NCSSM" },
-    { name: "Jack Chen", role: "Marketing Director", affiliation: "NCSSM" },
+    { name: "David Osinuga", role: "Logistics", affiliation: "NCSSM" },
+    { name: "Alan Cai", role: "Marketing", affiliation: "NCSSM" },
+    { name: "Jack Chen", role: "Marketing", affiliation: "NCSSM" },
     { name: "Baya Belgaied", role: "Outreach", affiliation: "NCSSM" },
-    {
-      name: "Scarlett Kerr",
-      role: "Outreach",
-      affiliation: "Byron Nelson High",
-    },
+    {name: "Scarlett Kerr", role: "Outreach", affiliation: "Byron Nelson High",},
   ],
 
   pastCompetitions: [
