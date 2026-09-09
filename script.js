@@ -96,7 +96,9 @@ window.addEventListener("hashchange", () =>
 if (location.hash) showSection(location.hash.slice(1));
 
 /* --- LINKS & PDFS --- */
-document.getElementById("registerBtn").href = CONFIG.registrationFormUrl;
+document
+  .querySelectorAll("[data-register]")
+  .forEach((link) => (link.href = CONFIG.registrationFormUrl));
 document.getElementById("instagramLink").href = CONFIG.instagramUrl;
 
 document.getElementById("pdfFrame").src = CONFIG.practicePdfUrl;

@@ -84,45 +84,30 @@
       <!-- HOME SECTION -->
       <section id="home" class="active">
         <div class="container hero">
-          <div>
+          <div class="hero-copy">
             <span class="eyebrow">Student-run · Based at NCSSM</span>
             <h1>NC Physics Organization</h1>
-            <p>
-              NCPhO is run by physics researchers and USA Physics Olympiad
-              medalists at the North Carolina School of Science and Mathematics
-              who are passionate about increasing engagement in physics.
+            <p class="hero-lede">
+              A free online physics olympiad and in-person camps, run by
+              physics researchers and USA Physics Olympiad medalists at the
+              North Carolina School of Science and Mathematics.
             </p>
-          </div>
-
-          <div class="pillars">
-            <div
-              class="pillar comp"
-              role="button"
-              tabindex="0"
-              onclick="showSection('info')"
-              onkeydown="onActivateKey(event, () => showSection('info'))"
-            >
-              <h3>NC Physics Olympiad</h3>
-              <p>
-                Our online olympiad will run two times a year and anyone can
-                enter. First place wins $100, and three more competitors win $20
-                each in a random draw.
-              </p>
-              <span class="enter">See dates &amp; register →</span>
-            </div>
-            <div
-              class="pillar out"
-              role="button"
-              tabindex="0"
-              onclick="showSection('outreach')"
-              onkeydown="onActivateKey(event, () => showSection('outreach'))"
-            >
-              <h3>Outreach</h3>
-              <p>
-                Physics is more fun in person, so our organization hosts physics
-                camps at rec centers in Charlotte and Wilmington.
-              </p>
-              <span class="enter">See our outreach →</span>
+            <div class="hero-actions">
+              <div class="hero-cta">
+                <a href="#" class="btn" data-register>Register</a>
+                <a
+                  href="#info"
+                  class="hero-sublink"
+                  onclick="showSection('info')"
+                  >Learn more</a
+                >
+              </div>
+              <a
+                href="#outreach"
+                class="hero-link"
+                onclick="showSection('outreach')"
+                >See our outreach →</a
+              >
             </div>
           </div>
 
@@ -229,7 +214,7 @@
 
             <p class="window-info" id="currentCompetitionInfo">Loading...</p>
 
-            <a href="#" class="btn" id="registerBtn">Register Now</a>
+            <a href="#" class="btn" id="registerBtn" data-register>Register Now</a>
 
             <hr class="divider" />
 
@@ -349,5 +334,6 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="physics-fx.js"></script>
   </body>
 </html>
