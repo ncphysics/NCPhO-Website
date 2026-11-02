@@ -39,14 +39,11 @@ const CONFIG = {
 
   pastCompetitions: [
     {
-      month: "Fall/Winter 2026–2027",
+      month: "October 2026",
       date: "2026-10-31",
-      testingWindow: "October 25–31, 2026",
       participants: 133,
       winner: "Stephen Danquah",
       topScore: 66,
-      maxScore: 66,
-      format: "15 multiple-choice questions · 45 minutes",
       testUrl: "tests/2026-2027-fall-winter.html",
       testLabel: "View test",
     },
@@ -217,11 +214,9 @@ CONFIG.pastCompetitions.forEach((c) => {
   div.className = "mini-card";
   div.innerHTML = `
     <h3>${c.month}</h3>
-    ${c.testingWindow ? `<p>Testing period: ${c.testingWindow}</p>` : ""}
     <p>Participants: ${c.participants}</p>
     <p>Prize winner: <span class="highlight">${c.winner}</span></p>
-    <p>High Score: ${c.topScore}${c.maxScore ? ` / ${c.maxScore}` : ""}</p>
-    ${c.format ? `<p>${c.format}</p>` : ""}
+    <p>High Score: ${c.topScore}</p>
     <p>Test: <a href="${c.testUrl}" target="_blank" rel="noopener noreferrer">${c.testLabel || c.testUrl}</a></p>`;
   archiveGrid.appendChild(div);
 });
