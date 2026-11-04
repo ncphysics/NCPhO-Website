@@ -1,7 +1,7 @@
 /* --- CONFIGURATION --- */
 const CONFIG = {
-  competitionStartDate: "2026-10-25",
-  competitionEndDate: "2026-10-31",
+  competitionStartDate: "2027-02-22",
+  competitionEndDate: "2027-02-28",
   registrationFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSeaGqVKQ4kgsVsWJlATgjXjFPpyAzNUzwQGr7rt6XQLQNNKOg/viewform?usp=header",
   instagramUrl:
@@ -66,43 +66,62 @@ const CONFIG = {
   ],
 };
 
-/* --- NAVIGATION --- */
-function showSection(sectionId) {
-  const section = document.getElementById(sectionId);
-  if (!section) return;
+/* --- ONE-PAGE NAVIGATION --- */
+const sections = [...document.querySelectorAll("main > section")];
+const navLinks = [...document.querySelectorAll(".nav-links a")];
+const navMenu = document.getElementById("navLinks");
+const menuToggle = document.querySelector(".mobile-toggle");
 
-  document
-    .querySelectorAll("section")
-    .forEach((s) => s.classList.remove("active"));
-  section.classList.add("active");
-
-  document
-    .querySelectorAll(".nav-links a")
-    .forEach((a) => a.classList.remove("active-link"));
-  const link = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-  if (link) link.classList.add("active-link");
-
-  document.getElementById("navLinks").classList.remove("active");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function closeMobileMenu() {
+  navMenu.classList.remove("active");
+  menuToggle.setAttribute("aria-expanded", "false");
 }
 
 function toggleMobileMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
+  const expanded = navMenu.classList.toggle("active");
+  menuToggle.setAttribute("aria-expanded", String(expanded));
 }
 
-// Keyboard activation (Enter/Space) for clickable non-button elements
-function onActivateKey(event, action) {
-  if (event.key === "Enter" || event.key === " ") {
-    event.preventDefault();
-    action();
+// Native anchor links preserve deep links and browser back/forward behavior.
+navLinks.forEach((link) => link.addEventListener("click", closeMobileMenu));
+document.querySelector(".logo").addEventListener("click", closeMobileMenu);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navMenu.classList.contains("active")) {
+    closeMobileMenu();
+    menuToggle.focus();
   }
+});
+
+function updateActiveSection() {
+  const marker = document.querySelector("nav").getBoundingClientRect().bottom + 24;
+  let current = sections[0];
+  for (const section of sections) {
+    if (section.getBoundingClientRect().top <= marker) current = section;
+  }
+  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+    current = sections[sections.length - 1];
+  }
+  sections.forEach((section) => section.classList.toggle("active", section === current));
+  navLinks.forEach((link) => {
+    const active = link.hash === `#${current.id}`;
+    link.classList.toggle("active-link", active);
+    if (active) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
 }
 
-// Deep links & back/forward: show the section named in the URL hash
-window.addEventListener("hashchange", () =>
-  showSection(location.hash.slice(1) || "home"),
-);
-if (location.hash) showSection(location.hash.slice(1));
+let navigationFrame = null;
+function scheduleNavigationUpdate() {
+  if (navigationFrame !== null) return;
+  navigationFrame = requestAnimationFrame(() => {
+    navigationFrame = null;
+    updateActiveSection();
+  });
+}
+window.addEventListener("scroll", scheduleNavigationUpdate, { passive: true });
+window.addEventListener("resize", scheduleNavigationUpdate);
+window.addEventListener("load", scheduleNavigationUpdate);
+updateActiveSection();
 
 /* --- LINKS & PDFS --- */
 document

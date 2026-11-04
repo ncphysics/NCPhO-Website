@@ -26,56 +26,42 @@
     <!-- Navigation -->
     <nav>
       <div class="nav-container">
-        <div
-          class="logo"
-          role="button"
-          tabindex="0"
-          onclick="showSection('home')"
-          onkeydown="onActivateKey(event, () => showSection('home'))"
-        >
-          NCPhO
-        </div>
+        <a class="logo" href="#home">NCPhO</a>
 
         <ul class="nav-links" id="navLinks">
           <li>
-            <a href="#home" onclick="showSection('home')" class="active-link"
-              >Home</a
-            >
+            <a href="#home" class="active-link">Home</a>
           </li>
           <li>
-            <a href="#outreach" onclick="showSection('outreach')">Outreach</a>
+            <a href="#outreach">Outreach</a>
           </li>
-          <li><a href="#info" onclick="showSection('info')">Competition</a></li>
+          <li><a href="#info">Competition</a></li>
           <li>
-            <a href="#practice" onclick="showSection('practice')">Practice</a>
-          </li>
-          <li>
-            <a href="#constants" onclick="showSection('constants')"
-              >Constants</a
-            >
+            <a href="#practice">Practice</a>
           </li>
           <li>
-            <a href="#contributors" onclick="showSection('contributors')"
-              >Team</a
-            >
+            <a href="#constants">Constants</a>
           </li>
           <li>
-            <a href="#archive" onclick="showSection('archive')">Archive</a>
+            <a href="#contributors">Team</a>
+          </li>
+          <li>
+            <a href="#archive">Archive</a>
           </li>
         </ul>
 
-        <div
+        <button
           class="mobile-toggle"
-          role="button"
-          tabindex="0"
+          type="button"
           aria-label="Toggle navigation menu"
+          aria-controls="navLinks"
+          aria-expanded="false"
           onclick="toggleMobileMenu()"
-          onkeydown="onActivateKey(event, toggleMobileMenu)"
         >
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
     </nav>
 
@@ -95,19 +81,9 @@
             <div class="hero-actions">
               <div class="hero-cta">
                 <a href="#" class="btn" data-register>Register</a>
-                <a
-                  href="#info"
-                  class="hero-sublink"
-                  onclick="showSection('info')"
-                  >Learn more</a
-                >
+                <a href="#info" class="hero-sublink">Learn more</a>
               </div>
-              <a
-                href="#outreach"
-                class="hero-link"
-                onclick="showSection('outreach')"
-                >See our outreach →</a
-              >
+              <a href="#outreach" class="hero-link">See our outreach →</a>
             </div>
           </div>
 
@@ -181,7 +157,6 @@
               <div class="prize-card first">
                 <div class="prize-amount">$100</div>
                 <div class="prize-tag">First Place</div>
-                <p>Top score takes it.</p>
               </div>
               <div class="prize-card draw">
                 <div class="prize-amount">$20 &times; 3</div>
@@ -269,6 +244,7 @@
                 src=""
                 id="pdfFrame"
                 title="Practice questions PDF"
+                loading="lazy"
                 allow="autoplay"
               ></iframe>
             </div>
@@ -297,6 +273,7 @@
                 src=""
                 id="constantsFrame"
                 title="List of constants PDF"
+                loading="lazy"
                 allow="autoplay"
               ></iframe>
             </div>

@@ -57,6 +57,10 @@
   --font-body: "Inter", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--page-bg);
@@ -99,6 +103,7 @@ nav {
   letter-spacing: -1px;
   color: var(--accent);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -149,25 +154,9 @@ main {
   padding: 2rem;
 }
 
-/* Tab System Logic */
-section {
-  display: none;
-  animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-section.active {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Keep every section in the page; anchor links clear the fixed navigation. */
+main > section {
+  scroll-margin-top: 80px;
 }
 
 /* --- HERO SECTION --- */
@@ -699,6 +688,9 @@ h3 {
 
 /* --- MOBILE MENU --- */
 .mobile-toggle {
+  border: 0;
+  padding: 0.5rem;
+  background: transparent;
   display: none;
   flex-direction: column;
   gap: 6px;
@@ -792,6 +784,10 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   #fx-canvas,
   #fx-field {
     display: none;

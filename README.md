@@ -4,7 +4,7 @@ Hello, welcome to the official website for the North Carolina Physics Olympiad! 
 
 ## Structure
 
-- `index.html` — page markup for all sections (home, outreach, competition, practice, constants, team, archive)
+- `index.html` — one continuous page with home, outreach, competition, practice, constants, team, and archive sections. Navigation links scroll to each section and highlight the current section.
 - `styles.css` — all styling
 - `script.js` — site config and data (`CONFIG` at the top), navigation, countdown, and the animated galaxy background
 - `ncphoConstants.pdf` — the constants sheet embedded on the Constants page
